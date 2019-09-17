@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">VAlarm</string>
+    <string name="title_menu_name">Title</string>
+    <string name="main_instraction">アラームの時刻を設定</string>
+    <string-array name="list">
+        <item>10:00</item>
+        <item>06:00</item>
+    </string-array>
+    <string name="background_discription">This is background image</string>
+    <string name="bottun_config">アラーム設定</string>
+    <string name="main_conversation">おはようございます！</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
