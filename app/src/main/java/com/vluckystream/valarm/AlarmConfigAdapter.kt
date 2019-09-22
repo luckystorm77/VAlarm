@@ -35,8 +35,8 @@ class AlarmConfigAdapter(context: Context) : BaseAdapter() {
     override public fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = layoutInflater.inflate(R.layout.activity_alart_config, parent, false)
 
-        view.findViewById<TextView>(R.id.hour).setText(alarmList.get(position).getHour())
-        view.findViewById<TextView>(R.id.minute).setText(alarmList.get(position).getMinute())
+        //view.findViewById<TextView>(R.id.hour).setText(alarmList.get(position).getHour())
+        //view.findViewById<TextView>(R.id.minute).setText(alarmList.get(position).getMinute())
 
         return view
     }

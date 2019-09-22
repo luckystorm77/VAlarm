@@ -4,8 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.ListView
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_alart_config.*
 
 class AlartConfigActivity : AppCompatActivity(), TimePickerFragment.OnTimeSelectedListner {
@@ -16,16 +15,14 @@ class AlartConfigActivity : AppCompatActivity(), TimePickerFragment.OnTimeSelect
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alart_config)
-        //val listView: ListView = findViewById(R.id.alarmList)
+        //TODO alarmList to array.xml
+        var alarmList :ArrayList<String> = ArrayList()
+        alarmList.add("10:00")
+        alarmList.add("9:30")
 
-        val list: MutableList<AlarmConfig> = mutableListOf()
-        val alarmConfigAdapter = AlarmConfigAdapter(this)
+        alarm_list.layoutManager = LinearLayoutManager(this)
 
-        addAlarmList(list, alarmConfigAdapter)
-
-        alarmConfigAdapter.setAlarmList(list)
-        //this.alarmList.adapter = alarmConfigAdapter
-
+        alarm_list.adapter = AlarmListAdapter(alarmList) //bug adapter
     }
 
     override fun onSelected(hour: Int, minute: Int) {
@@ -38,6 +35,7 @@ class AlartConfigActivity : AppCompatActivity(), TimePickerFragment.OnTimeSelect
         timePicker.show(supportFragmentManager, "time_picker")
     }
 
+    /*
     fun addAlarmList(list: MutableList<AlarmConfig>, alarmConfigAdapter: AlarmConfigAdapter) {
         //TODO change do
         val alarmConfig = AlarmConfig()
@@ -46,4 +44,6 @@ class AlartConfigActivity : AppCompatActivity(), TimePickerFragment.OnTimeSelect
         list.add(alarmConfig)
         alarmConfigAdapter.notifyDataSetChanged()
     }
+
+     */
 }
